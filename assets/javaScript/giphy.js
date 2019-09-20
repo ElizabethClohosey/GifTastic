@@ -3,23 +3,39 @@
 // giphy key - S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK
 
 var topics = ["Snowboarding", "Space", "Dogs", "Harry Potter", "X-ray", "Food", "1980's", "Groot", "New York", "Travel"];
-    // console.log(topics);
+    console.log(topics);
 
-for (var i = 0; i < topics.length; i++) {
-    var elements = topics[i];
-    // console.log("LOOP FOR TOPICS " + element);
+// fuunction to create buttons for topics 
+function renderButtons () {
+    for (var i = 0; i < topics.length; i++) {
+        // var elements = topics[i];
+        // console.log("LOOP FOR TOPICS " + element);
 
-    var topicButtons = $("<button>");
-    topicButtons.addClass("topic-buttons");
-    topicButtons.attr("data-buttons", elements);
-    topicButtons.text(elements);
-    // $(topicButtons).attr("value", topics[i]);
-
-    console.log(topicButtons);
-    $("#buttons-for-topics").append(topicButtons);
+        var topicButtons = $("<button>");
+        topicButtons.addClass("topic-buttons");
+        topicButtons.attr("data-buttons", topics[i]);
+        topicButtons.text(topics[i]);
+        // $(topicButtons).attr("value", topics[i]);
+        $("#buttons-for-topics").append(topicButtons);
+    }
 }
+
+renderButtons();
+
+$("#user-addition").on("click", function(event) {
+    event.preventDefault();
+    var newTopic = $("#user-topic").val().trim();
+    topics.push(newTopic);
+    console.log("Input Topic " + newTopic);
+    // var inputTopic = topics[topics.length - 1];
+    $("#buttons-for-topics").empty();
+    renderButtons();
+    // movieButton.html(inputTopic);
+    // $("#buttons-for-topics").append(inputTopic);
+});
+
 $("#buttons-for-topics").on("click", function(){ 
-    alert("TESTING");
+    // alert("TESTING");
 
     // work in progress comeback tomorrow 
     event.preventDefault();
