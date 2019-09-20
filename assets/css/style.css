@@ -1,0 +1,11 @@
+
+#buttons-for-topics {
+    margin-top: 3%;
+}
+
+.topic-buttons {
+    padding: .5%;   
+    margin-left: 1%; 
+    background-color: purple;
+    color: white;
+}
