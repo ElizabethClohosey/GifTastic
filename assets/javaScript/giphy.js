@@ -15,9 +15,9 @@ function renderButtons () {
         topicButtons.addClass("topic-buttons");
         topicButtons.attr("data-buttons", topics[i]);
         topicButtons.text(topics[i]);
-        // $(topicButtons).attr("value", topics[i]);
+        $(topicButtons).attr("value", topics[i]);
         $("#buttons-for-topics").append(topicButtons);
-        $("#data-buttons").attr("value", topics[i]);
+        // $("#data-buttons").attr("value", topics[i]);
     }
 }
 
@@ -49,7 +49,6 @@ $("#buttons-for-topics").on("click", function(){
 
     $.ajax({
         url: queryURL,
-        limit: (10),
         method: "GET",
     }).then(function(response){
         // console.log(response);
@@ -62,15 +61,30 @@ $("#buttons-for-topics").on("click", function(){
                 var rating = results[i].rating;
                 var p = $("<p>").text("Rating: " + rating);
                 var gifImage = $("<img>");
-                gifImage.attr("src", results[i].images.fixed_height.url);
+                gifImage.attr("src", results[i].images.fixed_height_still.url);
+                gifImage.attr("data-state", "still");
+                gifImage.attr("data-still", results[i].images.fixed_height_still.url);
+                gifImage.attr("data-animate", results[i].images.fixed_height.url);
+                gifImage.addClass("topicGifs");
                 gifDiv.append(p);
                 gifDiv.append(gifImage);
                 $("#show-gifs").prepend(gifDiv);
             }
-            
         }
-        // put code to connect gifs to buttons here 
     });
+
+    $(document).on("click", ".topicGifs", function(){
+        var status = $(this).attr("data-state");
+            if (status === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+            }
+        
+    });
+
 });
 
 
