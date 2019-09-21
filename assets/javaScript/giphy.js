@@ -13,7 +13,7 @@ function renderButtons () {
 
         var topicButtons = $("<button>");
         topicButtons.addClass("topic-buttons");
-        topicButtons.attr("data-buttons", topics[i]);
+        // topicButtons.attr("data-buttons", topics[i]);
         topicButtons.text(topics[i]);
         $(topicButtons).attr("value", topics[i]);
         $("#buttons-for-topics").append(topicButtons);
@@ -44,7 +44,8 @@ $("#buttons-for-topics").on("click", function(){
     // work in progress comeback tomorrow 
     event.preventDefault();
     
-    var topic = $(this).attr("data-buttons");
+    // var topic = $(this).attr("data-buttons");
+    var topic = $(".topic-buttons").val();
     queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK&limit=10";
 
     $.ajax({
@@ -82,7 +83,6 @@ $("#buttons-for-topics").on("click", function(){
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
             }
-        
     });
 
 });
