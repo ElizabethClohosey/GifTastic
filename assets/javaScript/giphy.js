@@ -72,6 +72,9 @@ $("#buttons-for-topics").on("click", function(){
         // put code to connect gifs to buttons here 
     });
 });
+
+
+
 // var topic = "space";
 // queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
 
@@ -176,6 +179,7 @@ $("#buttons-for-topics").on("click", function(){
 
 // questions for TA's 
 // why the random gifs
+// look at giphy2.js - seems to be working a bit better 
 
 
                     // pseudocode
