@@ -17,6 +17,7 @@ function renderButtons () {
         topicButtons.text(topics[i]);
         // $(topicButtons).attr("value", topics[i]);
         $("#buttons-for-topics").append(topicButtons);
+        $("#data-buttons").attr("value", topics[i]);
     }
 }
 
@@ -32,7 +33,7 @@ $("#user-addition").on("click", function(event) {
     $("#buttons-for-topics").empty();
     renderButtons();
     $("#user-topic").val('');
-    // movieButton.html(inputTopic);
+    // newTopit.html(inputTopic);
     // $("#buttons-for-topics").append(inputTopic);
 });
 
