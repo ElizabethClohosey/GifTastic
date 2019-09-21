@@ -44,10 +44,11 @@ $("#buttons-for-topics").on("click", function(){
     event.preventDefault();
     
     var topic = $(this).attr("data-buttons");
-    queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
+    queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK&limit=10";
 
     $.ajax({
         url: queryURL,
+        limit: (10),
         method: "GET",
     }).then(function(response){
         // console.log(response);
@@ -172,7 +173,8 @@ $("#buttons-for-topics").on("click", function(){
 
 
 
-
+// questions for TA's 
+// why the random gifs
 
 
                     // pseudocode
