@@ -2,7 +2,7 @@
 
 // giphy key - S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK
 
-var topics = ["Snowboarding", "Space", "Dogs", "Harry Potter", "X-ray", "Food", "1980's", "Groot", "New York", "Travel"];
+var topics = ["Snowboarding", "Space", "Dogs", "Harry Potter", "X-ray", "Food", "Toadstool", "Groot", "New York", "Archer", "South Park"];
     console.log(topics);
 
 // function to create buttons for topics 
@@ -25,11 +25,13 @@ $(document).ready(function(){
         event.preventDefault();
         var newTopic = $("#user-topic").val().trim();
         topics.push(newTopic);
+        
         console.log("Input Topic " + newTopic);
         // var inputTopic = topics[topics.length - 1];
         $("#buttons-for-topics").empty();
         renderButtons();
         $("#user-topic").val('');
+        // newTopic.addClass("topic-buttons");             
         // newTopit.html(inputTopic);
         // $("#buttons-for-topics").append(inputTopic);
     });
@@ -69,20 +71,28 @@ $(document).ready(function(){
             }
         });
 
-        $(document).on("click", ".topicGifs", function(){
-            var status = $(this).attr("data-state");
-                if (status === "still") {
-                    $(this).attr("src", $(this).attr("data-animate"));
-                    $(this).attr("data-state", "animate");
-                } else {
-                    $(this).attr("src", $(this).attr("data-still"));
-                    $(this).attr("data-state", "still");
-                }
+        
+
+        
         });
     });
+
+    $(document).on("click", ".topicGifs", function(){
+        var status = $(this).attr("data-state");
+            if (status === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+            }
+
 });
 
 //                     fix 
 // buttons are not working onclick after adding user topic
 // user topic button is not loading gifs onclick
+// limit is different 
+
+                    // solved
 // gifs after first set of gifs are not animating
