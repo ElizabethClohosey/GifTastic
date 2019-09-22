@@ -26,7 +26,8 @@ form {
     padding: .5%;
 }
 
-/* #show-gifs {
-    border: 1px solid black;
+#show-gifs {
+    /* border: 1px solid black; */
     margin-top: 3%;
-} */
+    margin-left: 35%;
+}

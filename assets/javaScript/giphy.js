@@ -38,14 +38,14 @@ $("#user-addition").on("click", function(event) {
 });
 
 // function to add gifs when each topic button is clicked 
-$("#buttons-for-topics").on("click", function(){ 
+$(".topic-buttons").on("click", function(){ 
     // alert("TESTING");
 
     // work in progress comeback tomorrow 
     event.preventDefault();
     
-    // var topic = $(this).attr("data-buttons");
-    var topic = $(".topic-buttons").val();
+    var topic = $(this).val();
+
     queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK&limit=10";
 
     $.ajax({
@@ -86,142 +86,3 @@ $("#buttons-for-topics").on("click", function(){
     });
 
 });
-
-
-
-// var topic = "space";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-//     // put code to connect gifs to buttons here 
-// });
-
-// var topic = "dogs";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-//     // put code to connect gifs to buttons here 
-// });
-
-// var topic = "harry potter";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-//     // put code to connect gifs to buttons here 
-// });
-
-// var topic = "x-ray";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-//     // put code to connect gifs to buttons here 
-// });
-
-// var topic = "food";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-//     // put code to connect gifs to buttons here 
-// });
-
-// var topic = "1980's";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-//     // put code to connect gifs to buttons here 
-// });
-
-// var topic = "groot";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-//     // put code to connect gifs to buttons here 
-// });
-
-// var topic = "new york";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-
-//     // put code to connect gifs to buttons here 
-// });
-
-// var topic = "travel";
-// queryURL = "https://api.giphy.com/v1/gifs/search?q="  + topic + "&api_key=S0zplPv4eNUbSVpvs05l7cC3Fuwo2OPK";
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET",
-// }).then(function(response){
-//     console.log(response);
-//     // put code to connect gifs to buttons here 
-// });
-
-
-
-// questions for TA's 
-// why the random gifs
-// look at giphy2.js - seems to be working a bit better 
-
-
-                    // pseudocode
-// add API to code using Ajax syntax
-// make onclick event for topic buttons to call related gifs
-//     - add ratings
-// make form to add additional favorite topics (with submit button)
-// make gifs pausable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// *********************IMPORTANT**************************
-
-// * Make sure you switch the protocol in the query URL from **`http to https`**, or the app may not work properly when deployed to Github Pages.
