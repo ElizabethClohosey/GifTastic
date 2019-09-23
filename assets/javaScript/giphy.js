@@ -28,6 +28,7 @@ $("#user-addition").on("click", function(event) {
 
     // function to add gifs when each topic button is clicked 
     $(document).on("click", ".topic-buttons", function(){ 
+        $("#show-gifs").empty();
         event.preventDefault();
 
         var topic = $(this).val();
@@ -49,8 +50,10 @@ $("#user-addition").on("click", function(event) {
                     gifImage.attr("data-still", results[i].images.fixed_height_still.url);
                     gifImage.attr("data-animate", results[i].images.fixed_height.url);
                     gifImage.addClass("topicGifs");
+                    
                     gifDiv.append(p);
                     gifDiv.append(gifImage);
+                    gifDiv.addClass("gif-div");
                     $("#show-gifs").prepend(gifDiv);
             }
         });
@@ -67,3 +70,8 @@ $("#user-addition").on("click", function(event) {
             }
     });
 });
+
+// add background color
+// add paragraph for instructions
+// add readme
+// link to portfolio

@@ -26,5 +26,17 @@ form {
 
 #show-gifs {
     margin-top: 3%;
-    margin-left: 35%;
+    /* margin-left: 35%; */
+}
+
+.gif-div {
+    background-color: purple;
+    float: left;
+    margin-left: 1%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+p {
+    color: white;
 }
