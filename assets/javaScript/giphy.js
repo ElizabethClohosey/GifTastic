@@ -71,7 +71,5 @@ $("#user-addition").on("click", function(event) {
     });
 });
 
-// add background color
-// add paragraph for instructions
 // add readme
 // link to portfolio
