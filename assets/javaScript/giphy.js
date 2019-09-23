@@ -71,5 +71,4 @@ $("#user-addition").on("click", function(event) {
     });
 });
 
-// add readme
 // link to portfolio
