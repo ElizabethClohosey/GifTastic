@@ -70,5 +70,3 @@ $("#user-addition").on("click", function(event) {
             }
     });
 });
-
-// link to portfolio
